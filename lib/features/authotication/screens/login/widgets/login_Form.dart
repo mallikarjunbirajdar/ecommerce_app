@@ -2,6 +2,7 @@ import 'package:e_commerce_app_2/common/widgets/botton/UElevatedBotton.dart';
 import 'package:e_commerce_app_2/features/authotication/screens/forgot_password/forgot_password_screen.dart';
 
 import 'package:e_commerce_app_2/features/authotication/screens/signup/signUp_screen.dart';
+import 'package:e_commerce_app_2/navigation_menu.dart';
 import 'package:e_commerce_app_2/utilis/constants/size.dart';
 import 'package:e_commerce_app_2/utilis/constants/texts.dart';
 import 'package:flutter/cupertino.dart';
@@ -48,7 +49,11 @@ class ULoginForm extends StatelessWidget {
         ],
       ),
       SizedBox(height: USizes.spaceBtwSections),
-      UElevatedBotton(onPressed: () {}, child: Text(UTexts.signIn)),
+      UElevatedBotton(onPressed: () {
+        Get.to(()=> NavigationMenu());
+
+
+      }, child: Text(UTexts.signIn)),
       SizedBox(height: USizes.spaceBtwSections / 2),
     SizedBox(
       width: double.infinity,
