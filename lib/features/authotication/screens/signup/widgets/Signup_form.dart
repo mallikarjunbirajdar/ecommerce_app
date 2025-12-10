@@ -1,5 +1,6 @@
 import 'package:e_commerce_app_2/common/widgets/botton/UElevatedBotton.dart';
 import 'package:e_commerce_app_2/features/authotication/screens/forgot_password/forgot_password_screen.dart';
+import 'package:e_commerce_app_2/features/authotication/screens/signup/verify_emailscreen.dart';
 import 'package:e_commerce_app_2/utilis/constants/colors.dart';
 import 'package:e_commerce_app_2/utilis/constants/size.dart';
 import 'package:e_commerce_app_2/utilis/constants/texts.dart';
@@ -89,7 +90,8 @@ class USignup_Form extends StatelessWidget {
     SizedBox(height: USizes.spaceBtwSections),
     UElevatedBotton(
         onPressed: () {
-          Get.to( ForgotPasswordScreen());
+          Get.to(()=> VerifyEmailscreen());
+         // Get.to( ForgotPasswordScreen());
         }, child: Text(UTexts.createAccount)),
     SizedBox(height: USizes.spaceBtwSections),]);
   }

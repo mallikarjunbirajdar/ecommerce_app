@@ -1,4 +1,6 @@
 import 'package:e_commerce_app_2/common/widgets/botton/UElevatedBotton.dart';
+import 'package:e_commerce_app_2/features/authotication/screens/forgot_password/forgot_password_screen.dart';
+import 'package:e_commerce_app_2/features/authotication/screens/forgot_password/resetPassword_screen.dart';
 import 'package:e_commerce_app_2/features/authotication/screens/signup/signUp_screen.dart';
 import 'package:e_commerce_app_2/utilis/constants/size.dart';
 import 'package:e_commerce_app_2/utilis/constants/texts.dart';
@@ -40,7 +42,9 @@ class ULoginForm extends StatelessWidget {
             ],
           ),
           TextButton(
-              onPressed: () {}, child: Text(UTexts.forgetPassword))
+              onPressed: () {
+                Get.to(()=>ForgotPasswordScreen());
+              }, child: Text(UTexts.forgetPassword))
         ],
       ),
       SizedBox(height: USizes.spaceBtwSections),
