@@ -1,20 +1,23 @@
-import 'package:e_commerce_app_2/common/widgets/customs_shapes/circular_container.dart';
+import 'package:e_commerce_app_2/common/widgets/textfields/search_bar.dart';
 import 'package:e_commerce_app_2/features/shop/screens/home/widgets/primary_header.dart';
-import 'package:e_commerce_app_2/utilis/constants/colors.dart';
-import 'package:e_commerce_app_2/utilis/helpers/devices_helpers.dart';
+import 'package:e_commerce_app_2/features/shop/screens/home/widgets/uHomeAppbar.dart';
+import 'package:e_commerce_app_2/utilis/constants/size.dart';
+import 'package:e_commerce_app_2/utilis/constants/texts.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen(
-      {super.key,
-      // this.height = 400,
-      // this.width = 400,
-      // this.redius = 400,
-      // this.backgroundColor = UColors.white,
-      // this.padding,
-      // this.margin
-      });
+  const HomeScreen({
+    super.key,
+    // this.height = 400,
+    // this.width = 400,
+    // this.redius = 400,
+    // this.backgroundColor = UColors.white,
+    // this.padding,
+    // this.margin
+  });
 
   // final double height;
   // final double width;
@@ -26,9 +29,17 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: UPrimaryHeaderContainer(
-       child: Container()
+        body: Stack(children: [
+      SizedBox(
+        height: USizes.homePrimaryHeaderHeight+10,
+       
       ),
-    );
+      UPrimaryHeaderContainer(
+          child: Column(children: [
+        UHomeAppBar(),
+      ])),
+      USearchBar()
+    ]));
   }
 }
+

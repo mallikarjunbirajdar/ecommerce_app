@@ -66,11 +66,13 @@ static const String OnboardingSubTitle3="Get your favorite items delivered to yo
 
   static const String homeAppBarTitle = 'Good Morning';
   static const String homeAppBarSubTitle = 'Unknown Pro';
+  
   static const String searchBarTitle = 'Search in Store';
   static const String popularCategories = 'Popular Categories';
 
 
 
+ 
 
 
 
