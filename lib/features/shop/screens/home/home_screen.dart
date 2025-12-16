@@ -1,6 +1,7 @@
 import 'package:e_commerce_app_2/common/widgets/textfields/search_bar.dart';
 import 'package:e_commerce_app_2/features/shop/screens/home/widgets/primary_header.dart';
 import 'package:e_commerce_app_2/features/shop/screens/home/widgets/uHomeAppbar.dart';
+import 'package:e_commerce_app_2/utilis/constants/colors.dart';
 import 'package:e_commerce_app_2/utilis/constants/size.dart';
 import 'package:e_commerce_app_2/utilis/constants/texts.dart';
 
@@ -35,8 +36,18 @@ class HomeScreen extends StatelessWidget {
        
       ),
       UPrimaryHeaderContainer(
-          child: Column(children: [
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
         UHomeAppBar(),
+        SizedBox(height: USizes.spaceBtwSections),
+        Text("Popular Categories",style: Theme.of(context).textTheme.headlineSmall!.apply(
+          color: UColors.white
+        )),
+
+        CircleAvatar(
+          radius: 30,
+        )
       ])),
       USearchBar()
     ]));
