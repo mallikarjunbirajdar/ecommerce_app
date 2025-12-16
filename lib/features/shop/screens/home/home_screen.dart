@@ -1,4 +1,5 @@
 import 'package:e_commerce_app_2/common/widgets/textfields/search_bar.dart';
+import 'package:e_commerce_app_2/features/shop/screens/home/widgets/home_categories.dart';
 import 'package:e_commerce_app_2/features/shop/screens/home/widgets/primary_header.dart';
 import 'package:e_commerce_app_2/features/shop/screens/home/widgets/uHomeAppbar.dart';
 import 'package:e_commerce_app_2/utilis/constants/colors.dart';
@@ -30,27 +31,26 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Stack(children: [
+        body: Column(
+          children: [
+             Stack(children: [
       SizedBox(
-        height: USizes.homePrimaryHeaderHeight+10,
-       
+        height: USizes.homePrimaryHeaderHeight + 10,
       ),
       UPrimaryHeaderContainer(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         UHomeAppBar(),
         SizedBox(height: USizes.spaceBtwSections),
-        Text("Popular Categories",style: Theme.of(context).textTheme.headlineSmall!.apply(
-          color: UColors.white
-        )),
-
-        CircleAvatar(
-          radius: 30,
-        )
+        UHomeCategories()
+       
       ])),
       USearchBar()
-    ]));
+    ])
+          ],
+        )
+    
+    
+    );
   }
 }
-
