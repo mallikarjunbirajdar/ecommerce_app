@@ -1,8 +1,10 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:e_commerce_app_2/common/widgets/textfields/search_bar.dart';
 import 'package:e_commerce_app_2/features/shop/screens/home/widgets/home_categories.dart';
 import 'package:e_commerce_app_2/features/shop/screens/home/widgets/primary_header.dart';
 import 'package:e_commerce_app_2/features/shop/screens/home/widgets/uHomeAppbar.dart';
 import 'package:e_commerce_app_2/utilis/constants/colors.dart';
+import 'package:e_commerce_app_2/utilis/constants/images.dart';
 import 'package:e_commerce_app_2/utilis/constants/size.dart';
 import 'package:e_commerce_app_2/utilis/constants/texts.dart';
 
@@ -46,7 +48,24 @@ class HomeScreen extends StatelessWidget {
        
       ])),
       USearchBar()
-    ])
+    ]),
+     SizedBox(height: USizes.defaultSpace),
+
+     Padding(
+       padding: const EdgeInsets.all(USizes.defaultSpace),
+       child: CarouselSlider(
+        items: [
+          Image(image: AssetImage(UImages.homeBanner1)),
+           Image(image: AssetImage(UImages.homeBanner2)),
+            Image(image: AssetImage(UImages.homeBanner3)),
+             Image(image: AssetImage(UImages.homeBanner4)),
+              Image(image: AssetImage(UImages.homeBanner5)),
+        ], 
+        options:CarouselOptions(
+          viewportFraction: 1,
+       
+        )),
+     )
           ],
         )
     
