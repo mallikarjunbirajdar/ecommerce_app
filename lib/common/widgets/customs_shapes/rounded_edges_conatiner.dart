@@ -9,6 +9,8 @@ class  URoundedEdgesContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipPath(
+      
+      
       clipper: UCustomeRoundedEdges(),
       child: child,
 
