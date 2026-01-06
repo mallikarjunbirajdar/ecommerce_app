@@ -11,7 +11,9 @@ class  URoundedEdgesContainer extends StatelessWidget {
     return ClipPath(
       
       
-      clipper: UCustomeRoundedEdges(),
+      clipper: UCustomeRoundedEdges(
+        
+      ),
       child: child,
 
 

@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:e_commerce_app_2/common/widgets/textfields/search_bar.dart';
+import 'package:e_commerce_app_2/common/widgets/texts/section_heading.dart';
 import 'package:e_commerce_app_2/features/shop/controller/home/home_controller.dart';
 import 'package:e_commerce_app_2/features/shop/screens/home/widgets/banners_dot_navigation.dart';
 import 'package:e_commerce_app_2/features/shop/screens/home/widgets/home_categories.dart';
@@ -40,34 +41,46 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final  controller=Get.put(HomeController());
     return Scaffold(
-        body: Column(
-      children: [
-        Stack(children: [
-          SizedBox(
-            height: USizes.homePrimaryHeaderHeight + 10,
-          ),
-          UPrimaryHeaderContainer(
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                UHomeAppBar(),
-                SizedBox(height: USizes.spaceBtwSections),
-                UHomeCategories()
-              ])),
-          USearchBar()
-        ]),
-        SizedBox(height: USizes.defaultSpace),
-        Padding(
-          padding: const EdgeInsets.all(USizes.defaultSpace),
-          child: Upromoslider(banners: [
-            UImages.homeBanner1,
-            UImages.homeBanner2,
-            UImages.homeBanner3,
-            UImages.homeBanner4,
-            UImages.homeBanner5
+        body: SingleChildScrollView(
+          child: Column(
+                children: [
+          Stack(children: [
+            SizedBox(
+              height: USizes.homePrimaryHeaderHeight + 10,
+            ),
+            UPrimaryHeaderContainer(
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                  UHomeAppBar(),
+                  SizedBox(height: USizes.spaceBtwSections),
+                  UHomeCategories()
+                ])),
+            USearchBar()
           ]),
-        )
-      ],
-    ));
+          SizedBox(height: USizes.defaultSpace),
+          Padding(
+            padding: const EdgeInsets.all(USizes.defaultSpace),
+            child: Column(
+              children: [
+                Upromoslider(banners: [
+                  UImages.homeBanner1,
+                  UImages.homeBanner2,
+                  UImages.homeBanner3,
+                  UImages.homeBanner4,
+                  UImages.homeBanner5
+                ]),
+            SizedBox(height: USizes.spaceBtwSections),
+                Usectionheading(title: 'Popular Products',onPressed: (){}),
+
+                SizedBox(height: USizes.spaceBtwItems)
+              ],
+            ),
+          )
+                ],
+              ),
+        ));
   }
 }
+
+
