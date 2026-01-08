@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:e_commerce_app_2/features/shop/controller/home/home_controller.dart';
 import 'package:e_commerce_app_2/features/shop/screens/home/widgets/banners_dot_navigation.dart';
 import 'package:e_commerce_app_2/utilis/constants/images.dart';
+import 'package:e_commerce_app_2/utilis/constants/size.dart';
 import 'package:flutter/cupertino.dart';
 
 class Upromoslider extends StatelessWidget {
@@ -20,7 +21,13 @@ class Upromoslider extends StatelessWidget {
       children: [
         CarouselSlider(
             items: banners
-                .map((banner) => Image(image: AssetImage(banner)))
+                .map((banner) => Container(decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(USizes.productImageRadius)
+                ),
+                  
+                  
+                  
+                  child: Image(image: AssetImage(banner))))
                 .toList(),
             options: CarouselOptions(
               viewportFraction: 1,

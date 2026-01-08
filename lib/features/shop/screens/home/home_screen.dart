@@ -39,11 +39,11 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final  controller=Get.put(HomeController());
+    final controller = Get.put(HomeController());
     return Scaffold(
         body: SingleChildScrollView(
-          child: Column(
-                children: [
+      child: Column(
+        children: [
           Stack(children: [
             SizedBox(
               height: USizes.homePrimaryHeaderHeight + 10,
@@ -70,17 +70,73 @@ class HomeScreen extends StatelessWidget {
                   UImages.homeBanner4,
                   UImages.homeBanner5
                 ]),
-            SizedBox(height: USizes.spaceBtwSections),
-                Usectionheading(title: 'Popular Products',onPressed: (){}),
+                SizedBox(height: USizes.spaceBtwSections),
+                Usectionheading(title: 'Popular Products', onPressed: () {}),
+                SizedBox(height: USizes.spaceBtwItems),
+                Container(
+                  width: 145,
+                  height: 212,
+                  padding: EdgeInsets.all(7),
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                          color: UColors.darkGrey.withValues(alpha: 0.1),
+                          blurRadius: 50,
+                          spreadRadius: 7,
+                          offset: Offset(0, 2)),
+                    ],
+                    borderRadius:
+                        BorderRadius.circular(USizes.productImageRadius),
+                    color: const Color.fromARGB(255, 149, 197, 245),
+                  ),
+                  child: Column(
+                    
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        padding: EdgeInsets.all(5),
+                        height: 125,
+                        width: 135,
+                        decoration: BoxDecoration(
+                          borderRadius:
+                              BorderRadius.circular(USizes.productImageRadius),
+                          color: Colors.white,
+                        ),
+                        child: Stack(
+                          children: [
+                            Positioned(
+                              left: 5,
+                              top: 5,
 
-                SizedBox(height: USizes.spaceBtwItems)
+                              child: Image(
+                                image: AssetImage(UImages.productImages25),
+                                height: 84,
+                                width: 82,
+                              ),
+                            ),
+                          Positioned(
+                            left: 100,
+                            child: Image(image: AssetImage(UImages.heart))),
+                          Image(image: AssetImage(UImages.productGroup27))
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: 9),
+                      Text("Blue INDURE Shoes"),
+                       Text("INDURE"),
+                        Text("${199}")
+
+
+                      
+
+                    ],
+                  ),
+                )
               ],
             ),
           )
-                ],
-              ),
-        ));
+        ],
+      ),
+    ));
   }
 }
-
-

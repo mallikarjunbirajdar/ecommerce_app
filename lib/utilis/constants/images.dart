@@ -51,6 +51,11 @@ class UImages{
   static const String homeBanner5 = 'assets/banners/banner_5.jpg';
 
 
+ static const String productImages25 = 'assets/product/product 26.png';
+static const String productGroup27 = 'assets/product/Group 27.png';
+static const String heart = 'assets/product/heart.png';
+
+
   
   
 }
